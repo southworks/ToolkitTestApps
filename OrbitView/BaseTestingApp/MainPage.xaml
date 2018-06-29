@@ -1,0 +1,76 @@
+﻿<Page
+    x:Class="BaseTestingApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BaseTestingApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid>
+            <controls:OrbitView x:Name="People"
+                              AnchorColor="Ivory"
+                              AnchorsEnabled="False"
+                              IsItemClickEnabled="True"
+                              MinItemSize="28"
+                              MaxItemSize="40"
+                              Height="400"
+                              OrbitColor="Gray"
+                              OrbitsEnabled="True">
+                <controls:OrbitView.ItemTemplate>
+                    <DataTemplate>
+                        <controls:DropShadowPanel HorizontalContentAlignment="Stretch"
+                                          VerticalContentAlignment="Stretch"
+                                          BlurRadius="6"
+                                          Color="{StaticResource SystemChromeBlackHighColor}">
+                            <Ellipse>
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="{Binding Image}" />
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </controls:DropShadowPanel>
+                    </DataTemplate>
+                </controls:OrbitView.ItemTemplate>
+                <controls:OrbitView.ItemsSource>
+                    <controls:OrbitViewDataItemCollection>
+                        <controls:OrbitViewDataItem Diameter="1"
+                                            Distance="0"
+                                            Image="https://placeimg.com/10/10/people"
+                                            Label="Shen" />
+                        <controls:OrbitViewDataItem Diameter="0.66"
+                                            Distance="0.33"
+                                            Image="https://placeimg.com/10/10/people"
+                                            Label="David" />
+                        <controls:OrbitViewDataItem Diameter="0.33"
+                                            Distance="0.66"
+                                            Image="https://placeimg.com/10/10/people"
+                                            Label="Petri" />
+                        <controls:OrbitViewDataItem Diameter="0"
+                                            Distance="1"
+                                            Image="https://placeimg.com/10/10/people"
+                                            Label="Vlad" />
+                    </controls:OrbitViewDataItemCollection>
+                </controls:OrbitView.ItemsSource>
+                <controls:OrbitView.CenterContent>
+                    <Grid>
+                        <controls:DropShadowPanel BlurRadius="24" 
+                                          Color="{StaticResource SystemChromeBlackHighColor}">
+                            <Ellipse Width="60"
+                           Height="60"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="ms-appx:///Assets/People/nikola.png"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </controls:DropShadowPanel>
+                    </Grid>
+                </controls:OrbitView.CenterContent>
+            </controls:OrbitView>
+
+        </Grid>
+    </Grid>
+</Page>
