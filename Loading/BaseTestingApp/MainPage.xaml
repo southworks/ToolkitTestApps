@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="BaseTestingApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:devTools="using:Microsoft.Toolkit.Uwp.DeveloperTools"
+    xmlns:local="using:BaseTestingApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Name="Grid"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Margin="10">
+                <TextBlock Text="Header" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Margin="10">
+                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">
+                    <Run>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                Expetenda tincidunt in sed, ex partem placerat sea, porro commodo ex eam. His putant aeterno interesset at. Usu ea mundi tincidunt, omnium virtute aliquando ius ex. Ea aperiri sententiae duo. Usu nullam dolorum quaestio ei, sit vidit facilisis ea. Per ne impedit iracundia neglegentur. Consetetur neglegentur eum ut, vis animal legimus inimicus id.
+                His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo, insolens complectitur te eos,</Run>
+                </TextBlock>
+            </StackPanel>
+            <Button Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="startLoading"  FontSize="30"> Start Loading</Button>
+            <devTools:FocusTracker Grid.Row="3" IsActive="True">
+            </devTools:FocusTracker>
+            
+        </Grid>    
+            <controls:Loading x:Name="LoadingControl" HorizontalContentAlignment="Center" 
+                          VerticalContentAlignment="Center">
+                <controls:Loading.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.60"/>
+                </controls:Loading.Background>
+            <StackPanel>
+                <TextBlock Text="Loading..." FontSize="40" Foreground="White"/>
+            </StackPanel>
+                
+            </controls:Loading>
+    </Grid>
+</Page>
