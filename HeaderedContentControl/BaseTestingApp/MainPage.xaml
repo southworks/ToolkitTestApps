@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="BaseTestingApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:local="using:QuickStart"
+    xmlns:developertools="using:Microsoft.Toolkit.Uwp.DeveloperTools"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    
+    
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Name="Grid"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0" Margin="10">
+                <controls:HeaderedContentControl 
+                                            Header=" HeaderedContentControl "
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Stretch">
+                    <controls:HeaderedContentControl.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock FontSize="25" HorizontalAlignment="Center">The Best Header</TextBlock>
+                                <TextBlock Margin="10" TextWrapping="Wrap" 
+                                       Text="The HeaderedContentControl is a UI control that allows content to be displayed with a specified header. The Header property can be any object and you can use the HeaderTemplate to specify a custom look to the header. Content for the HeaderedContentControl will align to the top left. This is to maintain the same functionality as the ContentControl." >
+
+                                </TextBlock>
+
+                                <Image Source="https://i1.wp.com/buildazure.com/wp-content/uploads/2017/09/Azure.png" Width="150"/>
+
+                                <TextBlock FontSize="25" HorizontalAlignment="Center">TextBox Header
+
+                                </TextBlock>
+                                <TextBox Text="TextBox"></TextBox>
+                                <Button Margin="10">BUTTON</Button>
+                                <developertools:FocusTracker  IsActive="True" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </controls:HeaderedContentControl.HeaderTemplate>
+
+                </controls:HeaderedContentControl>
+                
+
+            </StackPanel>
+            
+        </Grid>
+    </Grid>
+</Page>
