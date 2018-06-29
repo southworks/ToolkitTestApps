@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="BaseTestingApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BaseTestingApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls.Graph"
+    xmlns:developertools="using:Microsoft.Toolkit.Uwp.DeveloperTools"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <StackPanel>
+        <Grid>
+           
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0" x:Name="ClientId" TextChanged="ClientId_TextChanged"></TextBox>
+            <!--<Border  BorderBrush="Black" BorderThickness="5" HorizontalAlignment="Left" VerticalAlignment="Center" Width="auto">-->
+            <controls:AadLogin  Grid.Row="1" x:Name="AADLogin"
+                           View="LargeProfilePhotoRight"
+                           AllowSignInAsDifferentUser="True"
+                           SignInCompleted="AADLogin_SignInCompleted"
+                           SignInFailed="AADLogin_SignInFailed"/>
+            <!--</Border>-->
+            <StackPanel  Grid.Row="2" x:Name="template" Visibility="Collapsed">
+            
+            <!--<Border  BorderBrush="Black" BorderThickness="5" HorizontalAlignment="Left" VerticalAlignment="Center" Width="auto">
+
+                    <controls:ProfileCard x:Name="ProfileCard1"
+            UserId="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+            DisplayMode="LargeProfilePhotoLeft" />
+
+                </Border>-->
+                <controls:SharePointFileList x:Name="SharePointFileList1"
+                DetailPane="Side"  DeleteConfirmCancelMessage="Delete" DeleteConfirmOkMessage="OK"/>
+
+            </StackPanel>
+            <developertools:FocusTracker  Grid.Row="3" IsActive="True" HorizontalAlignment="Left" VerticalAlignment="Center" Height="157" Width="560" Margin="0,0,0,0"/>
+
+        </Grid>
+        
+
+    </StackPanel>
+
+
+
+
+
+</Page>
