@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="BaseTestingApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BaseTestingApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <controls:Expander Grid.Row="0" Header="Basic information">
+            <StackPanel>
+                <TextBlock Text="Expanded content" />
+                <TextBox PlaceholderText="First Name"></TextBox>
+                <TextBox PlaceholderText="Last Name"></TextBox>
+                <TextBox PlaceholderText="Email address"></TextBox>
+            </StackPanel>
+
+            <controls:Expander.ContentOverlay>
+                <Grid MinHeight="250">
+                    <TextBlock Text="Collapsed content" />
+                </Grid>
+            </controls:Expander.ContentOverlay>
+        </controls:Expander>
+
+        <controls:Expander Grid.Row="1" Header="Address information">
+            <StackPanel>
+                <TextBlock Text="Expanded content" />
+                <TextBox PlaceholderText="Line 1"></TextBox>
+                <TextBox PlaceholderText="Line 2"></TextBox>
+                <TextBox PlaceholderText="Line 3"></TextBox>
+                <TextBox PlaceholderText="Line 4"></TextBox>
+            </StackPanel>
+        </controls:Expander>
+    </Grid>
+</Page>
